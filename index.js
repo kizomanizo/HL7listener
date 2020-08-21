@@ -1,5 +1,5 @@
-const hl7 = require('simple-hl7');
-const app = hl7.tcp();
+const hl7 = require('simple-hl7')
+const app = hl7.tcp()
 const env = require('dotenv').config()
 
 app.use(function receiveMessage (req, res, next) {
@@ -45,4 +45,4 @@ app.use(function handleError (err, req, res, next) {
 });
 
 //Listen on configured port in ENV file or if not default to 7777
-app.start(process.env.PORT || 4400);
+app.start(process.env.MLLP_PORT || 4400);
